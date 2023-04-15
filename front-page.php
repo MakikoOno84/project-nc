@@ -58,7 +58,7 @@ get_header();
 								</div>
 								<?php
 								the_post_thumbnail(
-									'latest-blog'
+									'portrait-blog'
 								);
 								?>
 							</a>
@@ -69,7 +69,7 @@ get_header();
 				}
 				?>
 				</ul>
-				<a href="<?php echo esc_url(get_permalink(111)); ?>" class='remove_link_style link-text'><?php esc_html_e('お知らせ一覧','project_nc');?></a>
+				<a href="<?php echo esc_url(get_permalink(110)); ?>" class='remove_link_style link-text'><?php esc_html_e('お知らせ一覧','project_nc');?></a>
 		</div>
 		</section>
 		<!-- Section: どんな人？ -->

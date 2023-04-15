@@ -25,33 +25,34 @@
 			</nav>
 			<div class="footer-contact">
 				<?php
-					if (is_page('14')===false) {
+					$contact_pg_id = 108;
+					if (is_page($contact_pg_id)===false) {
 						?>
 						<h4><?php esc_html_e('西山ちえこ事務所','project_nc');?></h4>
 						<div class="contact-wrapper">
 						<?php
 						if (function_exists('get_field')) {
-							if (get_field('address', 14)) {
+							if (get_field('address', $contact_pg_id)) {
 								// just outputtinh the data, no html 
 								echo '<div>';
 								// get location svg icon
 								get_template_part('images/location');
 								echo '<p>';
-								the_field('address', 14);
+								the_field('address', $contact_pg_id);
 								echo '</p></div>';
 							}
-							if (get_field('email', 14)) {
+							if (get_field('email', $contact_pg_id)) {
 								echo '<div><p>';
 								// get location svg icon
 								get_template_part('images/email');
-								the_field('email', 14);
+								the_field('email', $contact_pg_id);
 								echo '</p></div>';
 							}
-							if (get_field('phone', 14)) {
+							if (get_field('phone', $contact_pg_id)) {
 								echo '<div><p>';
 								// get location svg icon
 								get_template_part('images/phone');
-								the_field('phone', 14);
+								the_field('phone', $contact_pg_id);
 								echo '</p></div>';
 							}
 						}?>

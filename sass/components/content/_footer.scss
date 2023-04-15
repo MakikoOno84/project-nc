@@ -42,3 +42,8 @@
         text-align: center;
     }
 }
+
+/* Clear floats from the content area for archive*/
+.entry-footer {
+	clear: both;
+}

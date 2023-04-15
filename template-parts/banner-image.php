@@ -16,7 +16,7 @@
 				<?php
 				if ( function_exists('get_field') ) :
 					if ( get_field('herologo') ) : ?>
-						<img src="<?php echo get_field('herologo');?>" class="hero-logo" alt="Nishiyama Chieko. Lgbt logo by Vecteezy">
+						<img src="<?php echo get_field('herologo');?>" class="hero-logo" alt="Nishiyama Chieko. Lgbt logo created by nurochman3278415 (vecteezy.com)">
 					<?php endif;
 				endif;
 				?>

@@ -134,10 +134,11 @@ if ( ! function_exists( 'project_nc_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<a class="post-thumbnail alignleft" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
 					the_post_thumbnail(
-						'post-thumbnail',
+						// 'post-thumbnail',
+						'portrait-blog',
 						array(
 							'alt' => the_title_attribute(
 								array(

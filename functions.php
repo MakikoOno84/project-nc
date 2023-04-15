@@ -47,8 +47,7 @@ function project_nc_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// added by Makiko :Our custom image crop sizes 
-	add_image_size('portrait-blog',200,250,true);
-	add_image_size('latest-blog',400,200,true);
+	add_image_size('portrait-blog',400,200,true);
 
 	// This theme uses wp_nav_menu() in one location.
 	// register_nav_menus(
