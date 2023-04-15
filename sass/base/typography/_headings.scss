@@ -1,0 +1,64 @@
+
+h3,
+h4,
+h5,
+h6 {
+	font-size: $font__mobile_heading_other;
+	clear: both;
+	// font-family: $font__heading;
+}
+
+h1 {
+	// font-family: $font__heading;
+	font-size: $font__mobile_heading_one;
+	margin-bottom: $margin__bottom-site-wrapper;
+}
+.single-post h1 {
+	padding-top: 1rem;
+	margin-bottom: 1rem;
+	border-top: 2px solid $color__header-font;
+} 
+
+h2 {
+	// font-family: $font__heading;
+	font-size: $font__mobile_heading_two;
+	// background-color: $color__header;
+	color: $color__header-font;
+}
+
+
+@media (min-width: 768px) {
+	
+
+	h3,
+	h4,
+	h5,
+	h6 {
+	font-size: $font__desktop_heading_other;
+	};
+	
+	h1 {
+	font-size: $font__desktop_heading_one;
+	}
+
+	h2 {
+		font-size: $font__desktop_heading_two;
+		}
+}
+
+
+/* banner image のないページのh1　*/
+.page-id-108,
+.page-id-112,
+.blog,
+.page-id-114 {
+	.site-wrapper {
+		h1 {
+			background-color: $color__header;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			text-align: center;
+			color: $color__white;
+		}
+	}
+}

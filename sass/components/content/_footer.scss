@@ -1,0 +1,44 @@
+.site-footer {
+    background-color: $color__background-footer;
+    color: $color__white;
+    padding: 2rem 2rem;
+    svg {
+        margin: -0.5em 1em;
+        margin-left: 0;
+        path {
+            fill: $color__white;
+        }
+    }
+    .contact-wrapper p {
+        margin: 0 0 1.5em;
+        display: inline-block;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        padding-bottom: 1rem;
+    }
+    a {
+        color: $color__white;
+    }
+}
+
+@media (min-width: 50em) {
+    .footer-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        h4 {
+            margin-top: 0;
+        }
+    }
+    .copyright {
+        text-align: center;
+    }
+    .author {
+        text-align: center;
+    }
+}

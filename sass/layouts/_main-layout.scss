@@ -1,0 +1,30 @@
+.site-wrapper {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@media (min-width:68.75em) {
+    .site-wrapper {
+        max-width: 62.5em;
+        margin: 0 auto;
+    }
+    .site-header {
+        max-width: 70.5em;
+        margin: 0 auto;
+    }
+}
+
+
+/* banner image のないページのレイアウト　*/
+
+.page-id-108,
+.page-id-112,
+.blog,
+.page-id-114,
+.single-post
+ {
+     .site-wrapper {
+        padding-top: 10rem;
+        margin-bottom: 5rem;
+     }
+}
