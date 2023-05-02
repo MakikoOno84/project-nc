@@ -28,6 +28,35 @@ get_header();
 		?>
 		
 		<div class="site-wrapper">
+		<!-- Section: Calender -->
+		<!-- <section class='section-calender'>
+			<iframe src="https://calendar.google.com/calendar/embed?src=dbb99195194619f90a6d669ec8e7fa287dd60759934eaabe0f7259d5029c33dd%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+		</section> -->
+		<!-- Section: SNS -->
+		<section class='section-sns'>
+			<a href="
+			<?php
+				if ( function_exists('get_field') ) :
+					if ( get_field('twitter')) :
+						echo the_field( 'twitter' );
+					endif;
+				endif;
+			?>
+			">
+				<?php get_template_part('images/twitter');?>
+			</a>
+			<a href="
+			<?php
+				if ( function_exists('get_field') ) :
+					if ( get_field('line')) :
+						echo the_field( 'line' );
+					endif;
+				endif;
+			?>
+			">
+				<?php get_template_part('images/line');?>
+			</a>
+		</section>
 		<!-- Section: お知らせ -->
 		<section class='section-news'>
 			<h2><?php esc_html_e('最新のお知らせ','project_nc');?></h2>
@@ -116,7 +145,7 @@ get_header();
 						<h2><?php the_field( 'supporters' ); ?></h2>
 					<?php endif;
 
-					for ( $i=1 ; $i <= 13 ; $i++) :
+					for ( $i=1 ; $i <= 100 ; $i++) :
 						
 						if ($i < 10):
 							$num = '0'.$i;
@@ -146,3 +175,5 @@ get_header();
 
 <?php
 get_footer();
+
+?>

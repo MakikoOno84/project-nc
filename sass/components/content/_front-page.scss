@@ -6,6 +6,23 @@
 	border-top: 2px solid $color__header-font;
 }
 
+/* Section: sns 
+----------------------------- */
+.section-sns {
+	margin-top: 3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1rem;
+	a {
+		display: block;
+		// width: fit-content;
+	}
+	svg {
+		fill: $color__sns;
+	}
+}
+
 /* Section: news 
 ----------------------------- */
 
@@ -90,7 +107,7 @@
 	article {
 		box-shadow: 0px 0px 3px 2px #eee;
 		margin:1rem auto;
-		max-width: 25rem ;
+		width: 100% ;
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}

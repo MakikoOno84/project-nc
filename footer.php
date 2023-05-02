@@ -60,10 +60,13 @@
 						<?php
 					}
 				?>
+				<div class="footer-other">
+					<p class='copyright'>Copyright Chieko Nishiyama 2023 ©</p>
+					<p class='author'><?php esc_html_e('Created by ','project_nc');?><a href="https://makiko.dev/"><?php esc_html_e('Makiko Ono','project_nc');?></a></p>
+				</div>
 			</div><!-- .footer-contact -->
+
 		</div>
-		<p class='copyright'>Copyright Chieko Nishiyama 2023 ©</p>
-		<p class='author'><?php esc_html_e('Created by ','project_nc');?><a href="https://makiko.dev/"><?php esc_html_e('Makiko Ono','project_nc');?></a></p>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

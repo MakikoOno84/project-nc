@@ -28,12 +28,6 @@ get_header();
 				?>
 
 				<article>
-					<h3><?php esc_html_e('住所','project_nc');?></h3>
-					<?php						
-					if ( get_field( 'address' ) ) : 
-						the_field('address');
-					endif;
-					?>
 					<h3><?php esc_html_e('メールアドレス','project_nc');?></h3>
 					<?php
 					if ( get_field( 'email' ) ) : 
@@ -49,7 +43,18 @@ get_header();
 						<p><?php the_field('phone'); ?></p>
 						<?php
 					endif;
+				endif;?>
+				<h3><?php esc_html_e('住所','project_nc');?></h3>
+				<?php						
+				if ( get_field( 'address' ) ) : 
+					the_field('address');
 				endif;
+				$location = get_field('googlemap');
+				if( $location ): ?>
+					<div class="acf-map" data-zoom="16">
+						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
+					</div>
+				<?php endif; 
 					?>
 				</article>
 	</section>

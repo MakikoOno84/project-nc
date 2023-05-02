@@ -24,22 +24,24 @@
     a {
         color: $color__white;
     }
+    .copyright,
+    .author {
+        margin-bottom: 0;
+    }
 }
 
-@media (min-width: 50em) {
+// @media (min-width: 50em) {
+
+@media (min-width: 68.75em) {
     .footer-wrapper {
+        max-width: 62.5em;
+        margin: 0 auto;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         h4 {
             margin-top: 0;
         }
-    }
-    .copyright {
-        text-align: center;
-    }
-    .author {
-        text-align: center;
     }
 }
 

@@ -47,7 +47,7 @@ function project_nc_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// added by Makiko :Our custom image crop sizes 
-	add_image_size('portrait-blog',400,200,true);
+	add_image_size('portrait-blog',400,200,array( 'left', 'top' ));
 
 	// This theme uses wp_nav_menu() in one location.
 	// register_nav_menus(
@@ -158,6 +158,20 @@ function project_nc_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	/* Added by Makiko Ono:start 
+	Google Map
+	*/
+
+	wp_enqueue_script(
+		'project-nc-googlemap1',
+		'https://maps.googleapis.com/maps/api/js?key=AIzaSyAyyrU0ObcAIIKpIrd-8A2kml3-A78x3NA',
+	);
+
+	wp_enqueue_script(
+		'project-nc-googlemap2',
+		get_template_directory_uri() . '/js/googlemap.js', array('jquery','project-nc-googlemap1'), _S_VERSION, true );
+
+	/* Added by Makiko Ono:end */
 
 }
 add_action( 'wp_enqueue_scripts', 'project_nc_scripts' );
@@ -214,5 +228,11 @@ function project_nc_excert_more($more) {
 	return $more;
 }
 add_filter('excerpt_more','project_nc_excert_more');
+
+// Register Google Map API key
+function my_acf_init() {
+    acf_update_setting('google_api_key', 'AIzaSyAyyrU0ObcAIIKpIrd-8A2kml3-A78x3NA');
+}
+add_action('acf/init', 'my_acf_init');
 
 /* Added by Makiko Ono:end */
