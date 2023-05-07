@@ -33,29 +33,54 @@ get_header();
 			<iframe src="https://calendar.google.com/calendar/embed?src=dbb99195194619f90a6d669ec8e7fa287dd60759934eaabe0f7259d5029c33dd%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 		</section> -->
 		<!-- Section: SNS -->
-		<section class='section-sns'>
-			<a href="
-			<?php
-				if ( function_exists('get_field') ) :
-					if ( get_field('twitter')) :
-						echo the_field( 'twitter' );
+		<section class='section-featured'>
+			<h2><?php esc_html_e('注目コンテンツ','project_nc');?></h2>
+			<div class='featured-wrapper'>
+				<div class='sns-wrapper'>
+					<?php 
+					$arrayOfSNS = array('twitter','line','facebook','instagram');
+					foreach ($arrayOfSNS as $sns ) {
+						if ( function_exists('get_field') ) :
+							if ( get_field($sns)) :
+							?>
+							<a href="
+							<?php
+								echo the_field( $sns );
+							?>
+							">
+							<?php get_template_part('images/'.$sns);?>
+							</a>
+						<?php
+							endif;
+						endif;
+					}
+					?>
+				</div>
+				<div class='fbanner-wrapper'>
+					<?php
+					if ( function_exists('get_field') ) :
+						for ( $i=1 ; $i <= 2 ; $i++) :
+							if ($i < 10):
+								$num = '0'.$i;
+							else:
+								$num = $i;
+							endif;
+							if ( get_field('featuredbannerimage'.$num)) :
+							?>
+							<div>
+							<img src="
+							<?php
+									echo the_field('featuredbannerimage'.$num);
+								?>
+							" alt="<?php esc_html_e('注目コンテンツバナー','project_nc');?>">
+							</div>
+							<?php
+							endif;
+						endfor;
 					endif;
-				endif;
-			?>
-			">
-				<?php get_template_part('images/twitter');?>
-			</a>
-			<a href="
-			<?php
-				if ( function_exists('get_field') ) :
-					if ( get_field('line')) :
-						echo the_field( 'line' );
-					endif;
-				endif;
-			?>
-			">
-				<?php get_template_part('images/line');?>
-			</a>
+					?>
+				</div>
+			</div>
 		</section>
 		<!-- Section: お知らせ -->
 		<section class='section-news'>

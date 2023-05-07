@@ -4,16 +4,13 @@
 	padding-top: 1rem;
 	// padding-bottom: 1rem;
 	border-top: 2px solid $color__header-font;
+	text-align: center;
 }
 
-/* Section: sns 
+/* Section: featured 
 ----------------------------- */
-.section-sns {
+.section-featured {
 	margin-top: 3rem;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	gap: 1rem;
 	a {
 		display: block;
 		// width: fit-content;
@@ -21,7 +18,24 @@
 	svg {
 		fill: $color__sns;
 	}
+	.sns-wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		gap: 1rem;
+		margin-bottom: 3rem;
+	}
 }
+
+@media (min-width:50em) {
+	.fbanner-wrapper {
+		width: 80%;
+		margin: 0 auto;
+		display: flex;
+		// align-items: flex-start;
+		gap: 1rem;
+	}
+}	
 
 /* Section: news 
 ----------------------------- */
@@ -30,7 +44,7 @@
 	text-align: left;
 	margin-bottom: $margin__bottom-section;
 	h2 {
-		text-align: center;
+		// text-align: center;
 	}
 	ul {
 		margin: 0;
