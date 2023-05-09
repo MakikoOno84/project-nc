@@ -32,30 +32,11 @@ get_header();
 		<!-- <section class='section-calender'>
 			<iframe src="https://calendar.google.com/calendar/embed?src=dbb99195194619f90a6d669ec8e7fa287dd60759934eaabe0f7259d5029c33dd%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 		</section> -->
+		
 		<!-- Section: 注目コンテンツ -->
 		<section class='section-featured'>
 			<h2><?php esc_html_e('注目コンテンツ','project_nc');?></h2>
 			<div class='featured-wrapper'>
-				<div class='sns-wrapper'>
-					<?php 
-					$arrayOfSNS = array('twitter','line','facebook','instagram');
-					foreach ($arrayOfSNS as $sns ) {
-						if ( function_exists('get_field') ) :
-							if ( get_field($sns)) :
-							?>
-							<a href="
-							<?php
-								echo the_field( $sns );
-							?>
-							">
-							<?php get_template_part('images/'.$sns);?>
-							</a>
-						<?php
-							endif;
-						endif;
-					}
-					?>
-				</div>
 				<div class='fbanner-wrapper'>
 					<?php
 					if ( function_exists('get_field') ) :
@@ -82,6 +63,10 @@ get_header();
 				</div>
 			</div>
 		</section>
+		<!-- Section: Middle Banner -->
+		<?php 
+		get_template_part( 'template-parts/content', 'sns' );
+		?>
 		<!-- Section: お知らせ -->
 		<section class='section-news'>
 			<h2><?php esc_html_e('最新のお知らせ','project_nc');?></h2>
@@ -162,10 +147,6 @@ get_header();
 			?>
 		</section>
 
-		<!-- Section: Middle Banner -->
-		<?php 
-		get_template_part( 'template-parts/content', 'sns' );
-		?>
 		<!-- Section: サポーター -->
 		<section class='section-supporters'>
 		<?php

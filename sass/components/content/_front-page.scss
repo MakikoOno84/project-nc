@@ -11,20 +11,7 @@
 ----------------------------- */
 .section-featured {
 	margin-top: 3rem;
-	a {
-		display: block;
-		// width: fit-content;
-	}
-	svg {
-		fill: $color__sns;
-	}
-	.sns-wrapper {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		gap: 1rem;
-		margin-bottom: 3rem;
-	}
+
 }
 
 @media (min-width:50em) {

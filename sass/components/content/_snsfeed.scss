@@ -1,7 +1,31 @@
 .content-snsfeed {
     background-color: rgba(0, 143, 140, 0.3);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     padding: 1rem 1rem;
     .twitter-timeline {
         margin: 0 auto;
+    }
+    // a {
+	// 	// display: block;
+	// 	// width: fit-content;
+	// }
+	svg {
+		fill: $color__sns;
+	}
+	// .sns-links {
+	// 	display: flex;
+	// 	flex-direction: row;
+	// 	justify-content: center;
+	// 	gap: 1rem;
+	// 	margin-bottom: 3rem;
+	// }
+}
+
+@media (min-width:50em) {
+    .sns-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
     }
 }
