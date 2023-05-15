@@ -47,15 +47,17 @@ get_header();
 								$num = $i;
 							endif;
 							if ( get_field('featuredbannerimage'.$num)) :
-							?>
-							<div>
-							<img src="
-							<?php
-									echo the_field('featuredbannerimage'.$num);
 								?>
-							" alt="<?php esc_html_e('注目コンテンツバナー','project_nc');?>">
-							</div>
-							<?php
+								<div>
+								<?php
+								$image = get_field('featuredbannerimage'.$num);
+								$size = 'large'; // (thumbnail, medium, large, full or custom size)
+								if( $image ) {
+									echo wp_get_attachment_image( $image, $size );
+								}
+								?>
+								</div>
+								<?php
 							endif;
 						endfor;
 					endif;
