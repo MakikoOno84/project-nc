@@ -67,10 +67,13 @@
 }
 
 @media (min-width:70em) {
+    .banner-text {
+        font-size: $font__desktop_banner_text;
+        padding: 2rem 1rem;
+    }
     .home .hero-text {
         max-width: 58.12em;
         // left:20%;
-        padding: 2rem 1rem;
     
     }
     .hero-content {
