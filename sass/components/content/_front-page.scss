@@ -17,6 +17,10 @@
 .pdf-wrapper {
 	.pdf-item {
 		margin-bottom: 3rem;
+		img {
+			display: block;
+			margin: 0 auto;
+		}
 	}
 	.pdf-text {
 		text-align: center;
@@ -30,6 +34,9 @@
 			border-radius: 100vh;
 			border-bottom: 7px solid rgb(250, 121, 121);
 			color: $color__white;
+		}
+		p:hover {
+			background:	rgba(250, 121, 121, 0.5);
 		}
 	}
 }

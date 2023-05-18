@@ -28,93 +28,86 @@ get_header();
 		?>
 		
 		<div class="site-wrapper">
-		<!-- Section: Calender -->
-		<!-- <section class='section-calender'>
-			<iframe src="https://calendar.google.com/calendar/embed?src=dbb99195194619f90a6d669ec8e7fa287dd60759934eaabe0f7259d5029c33dd%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-		</section> -->
-		
 		<!-- Section: 注目コンテンツ -->
 		<section class='section-featured'>
 			<h2><?php esc_html_e('注目コンテンツ','project_nc');?></h2>
 			<div class='featured-wrapper'>
-					<?php
-			if ( function_exists('get_field') ) :
-				// featured file
-				?><div class="pdf-wrapper"><?php
+				<?php
+				if ( function_exists('get_field') ) :
+					// featured pdf
+					?><div class="pdf-wrapper"><?php
+						for ( $i=1 ; $i <= 2 ; $i++) :
+							if ($i < 10):
+								$num = '0'.$i;
+							else:
+								$num = $i;
+							endif;
+							$pdf = get_field('pdf'.$num);
+
+							if( $pdf ):
+								// Extract variables.
+								$file = $pdf['file'];
+								$url = $pdf['file']['url'];
+								$title = $pdf['file']['title'];
+								$caption = $pdf['file']['caption'];
+								$size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+								?>
+								<div class="pdf-item">
+										<div class="pdf-image">
+											<?php
+											for ($j=1 ; $j <= 2 ; $j++) :
+												if ($j < 10):
+													$jnum = '0'.$j;
+												else:
+													$jnum = $j;
+												endif;
+												$img = $pdf['img'.$jnum];
+
+												if ( $img ) : ?>
+													
+														<div>
+														<?php echo wp_get_attachment_image( $img, $size ); ?>
+														</div>
+														
+													<?php
+												endif;
+											endfor;
+											?>
+										</div>
+										<a href="<?php echo esc_attr($url); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo esc_attr($title); ?>" class="pdf-text">
+											<h3><?php echo esc_html($caption); ?></h3>
+											<p><?php esc_html_e('PDFダウンロード','project_nc'); ?></p>
+										</a>
+								</div>
+								
+
+							<?php endif;
+						endfor;
+					?></div><?php
+					// featured image
 					for ( $i=1 ; $i <= 2 ; $i++) :
 						if ($i < 10):
 							$num = '0'.$i;
 						else:
 							$num = $i;
 						endif;
-						$pdf = get_field('pdf'.$num);
-
-						if( $pdf ):
-							// Extract variables.
-							$file = $pdf['file'];
-							$url = $pdf['file']['url'];
-							$title = $pdf['file']['title'];
-							$caption = $pdf['file']['caption'];
-							$size = 'full'; // (thumbnail, medium, large, full or custom size)
-
+						if ( get_field('featuredbannerimage'.$num)) :
 							?>
-							<div class="pdf-item">
-									<div class="pdf-image">
-										<?php
-										for ($j=1 ; $j <= 2 ; $j++) :
-											if ($j < 10):
-												$jnum = '0'.$j;
-											else:
-												$jnum = $j;
-											endif;
-											$img = $pdf['img'.$jnum];
-
-											if ( $img ) : ?>
-												
-													<div>
-													<?php echo wp_get_attachment_image( $img, $size ); ?>
-													</div>
-													
-												<?php
-											endif;
-										endfor;
-										?>
-									</div>
-									<a href="<?php echo esc_attr($url); ?>" title="<?php echo esc_attr($title); ?>" class="pdf-text">
-										<h3><?php echo esc_html($caption); ?></h3>
-										<p><?php esc_html_e('ダウンロード','project_nc'); ?></p>
-									</a>
+							<div class="fbanner-wrapper">
+							<?php
+							$image = get_field('featuredbannerimage'.$num);
+							$size = 'large'; // (thumbnail, medium, large, full or custom size)
+							if( $image ) {
+								echo wp_get_attachment_image( $image, $size );
+							}
+							?>
 							</div>
-							
-
-						<?php endif;
+							<?php
+						endif;
 					endfor;
-				?></div><?php
-				// featured image
-				for ( $i=1 ; $i <= 2 ; $i++) :
-					if ($i < 10):
-						$num = '0'.$i;
-					else:
-						$num = $i;
-					endif;
-					if ( get_field('featuredbannerimage'.$num)) :
-						?>
-						<div class="fbanner-wrapper">
-						<?php
-						$image = get_field('featuredbannerimage'.$num);
-						$size = 'large'; // (thumbnail, medium, large, full or custom size)
-						if( $image ) {
-							echo wp_get_attachment_image( $image, $size );
-						}
-						?>
-						</div>
-						<?php
-					endif;
-				endfor;
-			endif;
-			?>
-
-				
+				endif;
+				?>
 			</div>
 		</section>
 		<!-- Section: Middle Banner -->
