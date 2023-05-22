@@ -18,13 +18,6 @@ get_header();
 
 		<?php
 		get_template_part( 'template-parts/banner', 'image' );
-
-		// while ( have_posts() ) :
-		// 	the_post();
-
-		// 	get_template_part( 'template-parts/content', 'page' );
-
-		// endwhile; // End of the loop.
 		?>
 		
 		<div class="site-wrapper">
